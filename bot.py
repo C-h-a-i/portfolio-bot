@@ -1,6 +1,7 @@
 import logging
 import os
 
+from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
 
@@ -9,6 +10,8 @@ logging.basicConfig(
     level=logging.INFO,
 )
 logger = logging.getLogger(__name__)
+
+load_dotenv()
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
